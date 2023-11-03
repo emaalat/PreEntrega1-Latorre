@@ -1,0 +1,49 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+html {
+	font-size: 62.5%;
+    background-color: antiquewhite;
+}
+
+.main_h1{
+    text-align: center;
+    font-size: 5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.main_section_h2{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 5rem 0rem;
+}
+
+.main_section_article{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.main_article_div ul li {
+    margin: 10px 0px;
+}
+
+.main_article_div p{
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.intrucciones{
+    text-align: center;
+    position: absolute;
+    z-index: 10;
+    top: 70%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
