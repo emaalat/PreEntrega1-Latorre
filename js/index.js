@@ -1,39 +1,42 @@
-function mostrarPrecio (codigo){
-    
-    switch(codigo){
-        case "asado":
-            alert("el corte asado vale $1800")
-            break
-        case "falda":
-            alert("el corte falda vale $1000")
-            break
-        case "entraña":
-            alert("el corte entraña vale $2500")
-            break
-        case "vacio":
-            alert("el corte vacio vale $2000")
-            break
-        case "achuras":
-            alert("Las achuras valen $1500")
-            break
-        default:
-            alert("no entendi tu pedido :(")
-    }
+const carrito = []
+
+const  cortes = [
+    {imagen:"🐮", codigo:1, nombre: "vacio ", precio:2500},
+    {imagen:"🍖", codigo:2, nombre: "asado ", precio:1900},
+    {imagen:"🥓", codigo:3, nombre: "entraña ", precio:1800},
+    {imagen:"🥩", codigo:4, nombre: "bife ", precio:1500},
+    {imagen:"🐑", codigo:5, nombre: "cordero ", precio:3000},
+]
+
+function buscarCorte (codigo){
+    let corteSeleccionado = cortes.find((corte)=> corte.codigo === codigo)
+    return corteSeleccionado
 }
 
-window.onload = function consultarCorte(){
-
-    let preguntar = true
-
-    while (preguntar){
-        let tipoDeCorte = prompt("ingresa el tipo de corte que queres consultar:")
+function comprar (){
+    let codigo = prompt("Ingresa el codigo numerico del corte de carne.")
+    let corteElegido = buscarCorte(parseInt(codigo))
     
-        if(tipoDeCorte !== "" && tipoDeCorte !== null){
-            mostrarPrecio(tipoDeCorte)
-        } else{
-            console.warn("Ingresa un tipo de corte valido")
+    if (corteElegido !== undefined){
+        carrito.push(corteElegido)
+        alert(corteElegido.nombre +  " se agrego al carrito.")
+        let respuesta = confirm("Desea elegir algun otro corte?")
+        if (respuesta === true){
+            comprar()
+        }else{
+            console.clear()
+            const shop = new compra(carrito)
+            let subTotal= shop.obtenerSubtotal()
+            console.table(carrito)
+            console.log("💰 El costo de tu compra es: $", subTotal, "\nMuchas gracias por la compra.")
         }
-        preguntar = confirm("Deseas conocer el precio de otro corte?")
-    }
 
+    }else{
+        alert("❌Error de codigo de prenda ingresado.\nResfresca para realizar nuevamente la busqueda.")
+    }
 }
+
+
+
+
+

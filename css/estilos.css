@@ -47,3 +47,15 @@ html {
     font-size: 2rem;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.text-div{
+    margin: 30px 0px;
+    text-align: center;
+}
+
+.text-div p{
+    font-size: 2rem;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
